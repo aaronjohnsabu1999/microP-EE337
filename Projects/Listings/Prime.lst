@@ -1,0 +1,73 @@
+A51 MACRO ASSEMBLER  PRIME                                                                09/07/2019 11:36:35 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Prime.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\Prime.asm SET(SMALL) DEBUG PRINT(.\Listings\Prime.lst) OBJECT(
+                      .\Objects\Prime.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org  0000h
+0000 020119            2     ljmp main
+0100                   3     org  0100h
+                       4     
+0100                   5     check:                                          ;RESERVE: R3, R4, R7, USE: A, B
+0100 7B00              6                     mov R3, #0x00                   ;Stores instantaneous number of divisors of
+                              the number of interest
+0102 7C00              7                     mov R4, #0x00                   ;Stores instantaneous divisor
+                       8                     
+0104 0C                9     CP1:    inc R4
+0105 EA               10                     mov A,  R2                              ;Stores number of interest
+0106 8CF0             11                     mov B,  R4                              ;Stores instantaneous divisor
+0108 95F0             12                     subb A, B
+010A 600B             13                     jz CPx                                  ;If A=B, end check
+010C EA               14                     mov A,  R2
+010D 84               15                     div AB                                  ;If it divides, B=0
+010E AFF0             16                     mov R7, B                               ;R7 stores B (temp)
+0110 BF0001           17                     cjne R7, #0x00, CP2             ;If B!=0, it is not a proper divisor
+0113 0B               18                     inc  R3                                 ;If B==0, it is a proper divisor
+0114 020104           19     CP2:    ljmp CP1                                ;repeat the check with a new divisor
+0117 EB               20     CPx:    mov A, R3
+0118 22               21     ret
+                      22     
+0119                  23     main:                                           ;RESERVE: R0, R1, R2, 50h, 51h, 52h ..., US
+                             E: A
+0119 A950             24                     mov R1,   50h                   ;Stores value of N
+                      25                     ;mov 51h, #0x02                 ;Stores initial prime
+011B 7A01             26                     mov R2,  #0x01                  ;Stores number of interest
+011D 7851             27                     mov R0,  #0x51                  ;Stores storage location
+011F 0A               28     nextNo: inc R2
+0120 120100           29                     lcall check
+0123 B40103           30                     cjne A, #0x01, isNotPm
+                      31     ;isPrm: 
+0126 EA               32                     mov  A,   R2
+0127 F6               33                     mov @R0,  A
+0128 08               34                     inc  R0
+0129 EA               35     isNotPm:mov  A, R2
+012A B550F2           36                     cjne A, 50h, nextNo
+012D 80FE             37     here:   sjmp here
+                      38     end
+A51 MACRO ASSEMBLER  PRIME                                                                09/07/2019 11:36:35 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+CHECK. . . . . . .  C ADDR   0100H   A   
+CP1. . . . . . . .  C ADDR   0104H   A   
+CP2. . . . . . . .  C ADDR   0114H   A   
+CPX. . . . . . . .  C ADDR   0117H   A   
+HERE . . . . . . .  C ADDR   012DH   A   
+ISNOTPM. . . . . .  C ADDR   0129H   A   
+MAIN . . . . . . .  C ADDR   0119H   A   
+NEXTNO . . . . . .  C ADDR   011FH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

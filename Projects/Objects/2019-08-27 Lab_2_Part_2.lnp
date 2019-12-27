@@ -1,0 +1,3 @@
+".\Objects\InnerProduct.obj" 
+TO ".\Objects\2019-08-27 Lab_2_Part_2" 
+PRINT(".\Listings\2019-08-27 Lab_2_Part_2.m51") RAMSIZE(256) 

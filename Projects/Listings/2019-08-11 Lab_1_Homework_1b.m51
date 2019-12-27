@@ -1,0 +1,91 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    08/13/2019  14:57:57  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\SixteenBitAdder.obj TO .\Objects\2019-08-11 Lab_1_Homework_1b PRINT (.\Listings\20
+>> 19-08-11 Lab_1_Homework_1b.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\SixteenBitAdder.obj (SIXTEENBITADDER)
+
+
+LINK MAP OF MODULE:  .\Objects\2019-08-11 Lab_1_Homework_1b (SIXTEENBITADDER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0206H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\2019-08-11 Lab_1_Homework_1b (SIXTEENBITADDER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SIXTEENBITADDER
+  C:0050H         SYMBOL        ADDER_16BIT
+  D:00F0H         SYMBOL        B
+  C:0088H         SYMBOL        CLR_DATA
+  C:0204H         SYMBOL        HERE
+  C:007BH         SYMBOL        INIT
+  C:0200H         SYMBOL        MAIN
+  C:008AH         SYMBOL        REPEAT_CP
+  C:0000H         LINE#         2
+  C:0050H         LINE#         5
+  C:0052H         LINE#         6
+  C:0054H         LINE#         7
+  C:0056H         LINE#         8
+  C:0058H         LINE#         9
+  C:005AH         LINE#         10
+  C:005CH         LINE#         11
+  C:005EH         LINE#         12
+  C:0060H         LINE#         13
+  C:0061H         LINE#         15
+  C:0063H         LINE#         16
+  C:0064H         LINE#         17
+  C:0066H         LINE#         18
+  C:0069H         LINE#         19
+  C:006AH         LINE#         20
+  C:006BH         LINE#         21
+  C:006DH         LINE#         22
+  C:006EH         LINE#         23
+  C:0070H         LINE#         24
+  C:0073H         LINE#         25
+  C:0074H         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/13/2019  14:57:57  PAGE 2
+
+
+  C:0075H         LINE#         28
+  C:0076H         LINE#         29
+  C:0078H         LINE#         30
+  C:007AH         LINE#         31
+  C:007BH         LINE#         34
+  C:007EH         LINE#         35
+  C:0081H         LINE#         36
+  C:0084H         LINE#         37
+  C:0087H         LINE#         38
+  C:0088H         LINE#         41
+  C:008AH         LINE#         43
+  C:008CH         LINE#         44
+  C:008DH         LINE#         45
+  C:008FH         LINE#         46
+  C:0090H         LINE#         47
+  C:0093H         LINE#         48
+  C:0200H         LINE#         52
+  C:0202H         LINE#         53
+  C:0204H         LINE#         55
+  -------         ENDMOD        SIXTEENBITADDER
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 004DH BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=518
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

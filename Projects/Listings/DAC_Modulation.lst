@@ -1,0 +1,99 @@
+C51 COMPILER V9.60.0.0   DAC_MODULATION                                                    11/02/2019 15:16:57 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DAC_MODULATION
+OBJECT MODULE PLACED IN .\Objects\DAC_Modulation.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\Codes\Q3\DAC_Modulation.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND
+                    - PRINT(.\Listings\DAC_Modulation.lst) TABS(2) OBJECT(.\Objects\DAC_Modulation.obj)
+
+line level    source
+
+   1          // Quiz 3 Part 1
+   2          
+   3          #include <at89c5131.h>
+   4          #include "TLV5616_Header.h"             
+   5          // #include "TLV1543_Header.h"              
+   6          #include "filters.h"                                
+   7          
+   8          void msdelay(unsigned int);
+   9          void timer_ISR(void);
+  10          
+  11          unsigned int count = 0, countMT = 0;
+  12          char value = 0, valueMT = 0, final = 0;
+  13          int lookup[32] = {0x00, 0x18, 0x30, 0x46, 0x5a, 0x6a, 0x75, 0x7d, 0x7f, 0x7d, 0x75, 0x6a, 0x5a, 0x46, 0x30
+             -, 0x18, 0x00, 0xe7, 0xcf, 0xb9, 0xa5, 0x95, 0x8a, 0x82, 0x80, 0x82, 0x8a, 0x95, 0xa5, 0xb9, 0xcf, 0xe7};
+  14          // void msdelay(unsigned int);
+  15          void timer_ISR(void);
+  16          
+  17          void main(void)
+  18          {
+  19   1        // unsigned int adc_data = 0, dac_data = 0;
+  20   1        spi_init();
+  21   1        // adc_init();
+  22   1        dac_init();
+  23   1        EA    = 1;
+  24   1        ET0   = 1;
+  25   1        TR0   = 1;
+  26   1        ET1   = 1;
+  27   1        TR1   = 1;
+  28   1        TMOD  = 0x22;
+  29   1        while(1)
+  30   1        {
+  31   2          P1    &=  0x7F;
+  32   2          TH0   =   -8;
+  33   2          TH1   =   -80;
+  34   2          final = value*valueMT;
+  35   2          final = final + 128;
+  36   2          dac(final);
+  37   2        }
+  38   1      }
+  39          
+  40          /*
+  41          void msdelay(unsigned int time)
+  42          {
+  43            int i, j;
+  44            for(i=0; i<time; i++)
+  45            {
+  46              for(j=0;j<382;j++);
+  47            }
+  48          }
+  49          */
+  50          
+  51          void timer_ISR(void) interrupt 1
+  52          {
+  53   1        count++;
+C51 COMPILER V9.60.0.0   DAC_MODULATION                                                    11/02/2019 15:16:57 PAGE 2   
+
+  54   1        if(count == 32)
+  55   1          count = 0;
+  56   1        value = lookup[count];
+  57   1        // dac(value);
+  58   1        TH0   = -8;
+  59   1        TR0   = 1;
+  60   1        TF0   = 0;
+  61   1      }
+  62          
+  63          void timer_ISR_mod(void) interrupt 3
+  64          {
+  65   1        countMT++;
+  66   1        if(countMT == 32)
+  67   1          countMT = 0;
+  68   1        valueMT = lookup[countMT];
+  69   1        TH1   = -80;
+  70   1        TR1   = 1;
+  71   1        TF1   = 0;
+  72   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    339    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     96    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

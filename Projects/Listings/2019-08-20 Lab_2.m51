@@ -1,0 +1,57 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    08/20/2019  14:20:33  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\ZeroOut.obj TO .\Objects\2019-08-20 Lab_2 PRINT (.\Listings\2019-08-20 Lab_2.m51) 
+>> RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\ZeroOut.obj (ZEROOUT)
+
+
+LINK MAP OF MODULE:  .\Objects\2019-08-20 Lab_2 (ZEROOUT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0064H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\2019-08-20 Lab_2 (ZEROOUT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ZEROOUT
+  C:0054H         SYMBOL        CP1
+  C:0062H         SYMBOL        HERE
+  C:005FH         SYMBOL        MAIN
+  C:0050H         SYMBOL        ZEROOUT
+  C:0000H         LINE#         2
+  C:0050H         LINE#         6
+  C:0052H         LINE#         7
+  C:0054H         LINE#         8
+  C:0055H         LINE#         9
+  C:0056H         LINE#         10
+  C:0057H         LINE#         11
+  C:0059H         LINE#         12
+  C:005AH         LINE#         13
+  C:005BH         LINE#         14
+  C:005EH         LINE#         15
+  C:005FH         LINE#         17
+  C:0062H         LINE#         18
+  -------         ENDMOD        ZEROOUT
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0017H BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=100
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

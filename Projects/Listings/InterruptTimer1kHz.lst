@@ -1,0 +1,54 @@
+A51 MACRO ASSEMBLER  INTERRUPTTIMER1KHZ                                                   09/24/2019 13:37:02 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\InterruptTimer1kHz.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\InterruptTimer1kHz.asm SET(SMALL) DEBUG PRINT(.\Listings\Inter
+                      ruptTimer1kHz.lst) OBJECT(.\Objects\InterruptTimer1kHz.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org  0000h
+0000 02005B            2     ljmp main
+                       3     
+000B                   4     org  000Bh
+000B 020050            5     ljmp T0ISR
+                       6     
+0050                   7     org  0050h
+0050 C28D              8     T0ISR:  clr  TF0
+0052 758A18            9                     mov TL0,  #00011000b
+0055 758CFC           10                     mov TH0,  #11111100b
+0058 B2B2             11                     cpl  P3.2
+005A 32               12     reti
+                      13                     
+005B 758A02           14     main:   mov  TL0,  #00000010b
+005E 758CFC           15                     mov  TH0,  #11111100b
+0061 758901           16                     mov  TMOD, #00000001b
+0064 75A882           17                     mov  IE,   #10000010b
+0067 D28C             18                     setb TR0
+0069 80FE             19     loop:   sjmp loop
+                      20     end
+A51 MACRO ASSEMBLER  INTERRUPTTIMER1KHZ                                                   09/24/2019 13:37:02 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+IE . . . . . . . .  D ADDR   00A8H   A   
+LOOP . . . . . . .  C ADDR   0069H   A   
+MAIN . . . . . . .  C ADDR   005BH   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+T0ISR. . . . . . .  C ADDR   0050H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,64 @@
+A51 MACRO ASSEMBLER  WAVEFORMGENERATION                                                   09/07/2019 11:05:46 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\WaveformGeneration.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\WaveformGeneration.asm SET(SMALL) DEBUG PRINT(.\Listings\Wavef
+                      ormGeneration.lst) OBJECT(.\Objects\WaveformGeneration.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0000H
+0000 020109            2     ljmp main
+                       3     
+0100                   4     org 0100H
+0100                   5     delay:                                                  ;Delay of 50-60 ms
+0100 7FC8              6                     mov  R7, #0xC8
+0102 7EFF              7     back0:  mov  R6, #0xFF
+0104 DEFE              8     back1:  djnz R6,  back1
+0106 DFFA              9                     djnz R7,  back0
+0108 22               10     ret
+                      11     
+0109                  12     main:
+0109 759000           13                     mov  P1, #0x00  ;Sets P1 as output
+010C 7D00             14                     mov  R5, #0x00  ;Stores direction - 0x00 if inc, 0x01 if dec
+010E 7C00             15                     mov  R4, #0x00  ;Stores value to be fed to P1
+0110 8C90             16     loop:   mov  P1, R4
+0112 120100           17                     lcall delay
+                      18                     
+0115 EC               19                     mov  A,  R4
+0116 B4FA02           20                     cjne A,  #250,  decM
+0119 7D01             21                     mov  R5, #0x01
+011B B40002           22     decM:   cjne A,  #0x00, incM
+011E 7D00             23                     mov  R5, #0x00
+                      24                     
+0120 2432             25     incM:   add  A,  #0x32
+0122 BD0102           26                     cjne R5, #0x01, incCP
+0125 9464             27                     subb A,  #0x64
+                      28                     
+0127 FC               29     incCP:  mov  R4, A
+0128 020110           30                     ljmp loop
+                      31     end
+A51 MACRO ASSEMBLER  WAVEFORMGENERATION                                                   09/07/2019 11:05:46 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK0. . . . . . .  C ADDR   0102H   A   
+BACK1. . . . . . .  C ADDR   0104H   A   
+DECM . . . . . . .  C ADDR   011BH   A   
+DELAY. . . . . . .  C ADDR   0100H   A   
+INCCP. . . . . . .  C ADDR   0127H   A   
+INCM . . . . . . .  C ADDR   0120H   A   
+LOOP . . . . . . .  C ADDR   0110H   A   
+MAIN . . . . . . .  C ADDR   0109H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

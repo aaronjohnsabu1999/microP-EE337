@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\DAC_Sine250Hz.obj" 
+TO ".\Objects\2019-11-02 Quiz_3_Part_2" 
+PRINT(".\Listings\2019-11-02 Quiz_3_Part_2.m51") RAMSIZE(256) 

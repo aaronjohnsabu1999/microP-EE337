@@ -1,0 +1,3 @@
+".\Objects\SixteenBitAdder.obj" 
+TO ".\Objects\2019-08-11 Lab_1_Homework_1b" 
+PRINT(".\Listings\2019-08-11 Lab_1_Homework_1b.m51") RAMSIZE(256) 

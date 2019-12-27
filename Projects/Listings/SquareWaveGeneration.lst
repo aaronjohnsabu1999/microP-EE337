@@ -1,0 +1,61 @@
+A51 MACRO ASSEMBLER  SQUAREWAVEGENERATION                                                 10/13/2019 13:31:32 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\SquareWaveGeneration.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\SquareWaveGeneration.asm SET(SMALL) DEBUG PRINT(.\Listings\Squ
+                      areWaveGeneration.lst) OBJECT(.\Objects\SquareWaveGeneration.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org             0000h
+0000 020063            2     ljmp    main
+                       3     
+000B                   4     org             000Bh
+000B 020050            5     ljmp    T0ISR
+                       6     
+0050                   7     org             0050h
+0050 C28D              8     T0ISR:  clr             TF0
+0052 758A1C            9                     mov             TL0,    #00011100b
+0055 758CFC           10                     mov             TH0,    #11111100b
+0058 D808             11                     djnz    R0,             ISREnd
+005A 78FA             12                     mov             R0,             #11111010b
+005C D904             13                     djnz    R1,             ISREnd
+005E 7904             14                     mov             R1,             #00000100b
+0060 B2B2             15                     cpl             P3.2
+0062 32               16     ISREnd: reti
+                      17     
+0063 78FA             18     main:   mov             R0,             #11111010b
+0065 7904             19                     mov             R1,             #00000100b
+0067 758A1C           20                     mov             TL0,    #00011100b
+006A 758CFC           21                     mov             TH0,    #11111100b
+006D 758901           22                     mov             TMOD,   #00000001b
+0070 75A882           23                     mov             IE,             #10000010b
+0073 D28C             24                     setb    TR0
+0075 80FE             25     loop:   sjmp    loop
+                      26     end
+A51 MACRO ASSEMBLER  SQUAREWAVEGENERATION                                                 10/13/2019 13:31:32 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+IE . . . . . . . .  D ADDR   00A8H   A   
+ISREND . . . . . .  C ADDR   0062H   A   
+LOOP . . . . . . .  C ADDR   0075H   A   
+MAIN . . . . . . .  C ADDR   0063H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+T0ISR. . . . . . .  C ADDR   0050H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

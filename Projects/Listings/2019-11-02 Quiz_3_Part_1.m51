@@ -1,0 +1,334 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    11/02/2019  15:34:51  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\DAC_TriangleWave.obj TO .\Objects\2019-11-02 Quiz_3_Part_1 
+>> PRINT (.\Listings\2019-11-02 Quiz_3_Part_1.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\DAC_TriangleWave.obj (DAC_TRIANGLEWAVE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?SIDIV)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  .\Objects\2019-11-02 Quiz_3_Part_1 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         _DATA_GROUP_
+                    000EH     0012H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?DAC_TRIANGLEWAVE
+            BIT     0020H.1   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.2   0000H.6                *** GAP ***
+            DATA    0021H     0019H     UNIT         ?DT?DAC_TRIANGLEWAVE
+            IDATA   003AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0048H                  *** GAP ***
+            CODE    004BH     0003H     ABSOLUTE     
+                    004EH     07B2H                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     008BH     UNIT         ?C?LIB_CODE
+            CODE    0917H     0062H     UNIT         ?PR?MAIN?DAC_TRIANGLEWAVE
+            CODE    0979H     0052H     UNIT         ?PR?_MOVING_AVG?DAC_TRIANGLEWAVE
+            CODE    09CBH     0020H     UNIT         ?PR?_SPI_TRX_16_BIT?DAC_TRIANGLEWAVE
+            CODE    09EBH     0020H     UNIT         ?PR?_ADC?DAC_TRIANGLEWAVE
+            CODE    0A0BH     0020H     UNIT         ?PR?_DAC?DAC_TRIANGLEWAVE
+            CODE    0A2BH     0020H     UNIT         ?PR?_MSDELAY?DAC_TRIANGLEWAVE
+            CODE    0A4BH     001CH     UNIT         ?PR?SPI_INTERRUPT?DAC_TRIANGLEWAVE
+            CODE    0A67H     000FH     UNIT         ?C_INITSEG
+            CODE    0A76H     000CH     UNIT         ?PR?SPI_INIT?DAC_TRIANGLEWAVE
+            CODE    0A82H     0005H     UNIT         ?PR?DAC_INIT?DAC_TRIANGLEWAVE
+            CODE    0A87H     0003H     UNIT         ?PR?ADC_INIT?DAC_TRIANGLEWAVE
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\2019-11-02 Quiz_3_Part_1 (?C_STARTUP)
+
+
+SEGMENT                                         BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT                        START    LENGTH     START    LENGTH
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/02/2019  15:34:51  PAGE 2
+
+
+--------------------------------------------------------------------------------
+?C_C51STARTUP                                -----    -----      -----    -----
+  +--> ?PR?MAIN?DAC_TRIANGLEWAVE
+  +--> ?C_INITSEG
+
+?PR?MAIN?DAC_TRIANGLEWAVE                    0020H.1  0000H.1    0008H    0006H
+  +--> ?PR?SPI_INIT?DAC_TRIANGLEWAVE
+  +--> ?PR?ADC_INIT?DAC_TRIANGLEWAVE
+  +--> ?PR?DAC_INIT?DAC_TRIANGLEWAVE
+  +--> ?PR?_MSDELAY?DAC_TRIANGLEWAVE
+  +--> ?PR?_DAC?DAC_TRIANGLEWAVE
+
+?PR?_DAC?DAC_TRIANGLEWAVE                    -----    -----      -----    -----
+  +--> ?PR?_SPI_TRX_16_BIT?DAC_TRIANGLEWAVE
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\2019-11-02 Quiz_3_Part_1 (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0800H         SEGMENT       ?C_C51STARTUP
+  I:003AH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0803H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0800H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0800H         LINE#         133
+  C:0802H         LINE#         134
+  C:0803H         LINE#         135
+  C:0804H         LINE#         136
+  C:0806H         LINE#         185
+  C:0809H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        DAC_TRIANGLEWAVE
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/02/2019  15:34:51  PAGE 3
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:00C3H         PUBLIC        SPCON
+  B:00A8H.7       PUBLIC        EA
+  D:00C4H         PUBLIC        SPSTA
+  D:00A8H         PUBLIC        IEN0
+  D:00B1H         PUBLIC        IEN1
+  D:00B8H         PUBLIC        IPL0
+  B:0020H.0       PUBLIC        transmit_completed
+  C:0A4BH         PUBLIC        spi_interrupt
+  D:00D8H         PUBLIC        CCON
+  C:0917H         PUBLIC        main
+  C:0A0BH         PUBLIC        _dac
+  C:09EBH         PUBLIC        _adc
+  C:0979H         PUBLIC        _moving_avg
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0A82H         PUBLIC        dac_init
+  C:0A87H         PUBLIC        adc_init
+  D:00F8H         PUBLIC        UEPINT
+  B:0090H.3       PUBLIC        fs
+  D:0039H         PUBLIC        temp_spi_data
+  C:0A76H         PUBLIC        spi_init
+  D:00C8H         PUBLIC        T2CON
+  C:0A2BH         PUBLIC        _msdelay
+  C:09CBH         PUBLIC        _spi_trx_16_bit
+  B:0090H.2       PUBLIC        cs_bar_dac
+  B:0090H.4       PUBLIC        cs_bar_adc
+  D:00C5H         PUBLIC        SPDAT
+  -------         PROC          SPI_INIT
+  C:0A76H         LINE#         14
+  C:0A76H         LINE#         15
+  C:0A76H         LINE#         16
+  C:0A79H         LINE#         17
+  C:0A7CH         LINE#         18
+  C:0A7EH         LINE#         19
+  C:0A81H         LINE#         20
+  -------         ENDPROC       SPI_INIT
+  -------         PROC          _SPI_TRX_16_BIT
+  D:0004H         SYMBOL        spi_data_tx
+  -------         DO            
+  D:0006H         SYMBOL        spi_data_rx
+  D:0007H         SYMBOL        spi_data_high
+  D:0005H         SYMBOL        spi_data_low
+  -------         ENDDO         
+  C:09CBH         LINE#         22
+  C:09CFH         LINE#         23
+  C:09CFH         LINE#         28
+  C:09D1H         LINE#         29
+  C:09D3H         LINE#         30
+  C:09D6H         LINE#         31
+  C:09D8H         LINE#         33
+  C:09DAH         LINE#         34
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/02/2019  15:34:51  PAGE 4
+
+
+  C:09DCH         LINE#         35
+  C:09DFH         LINE#         36
+  C:09DFH         LINE#         38
+  C:09EAH         LINE#         39
+  C:09EAH         LINE#         40
+  -------         ENDPROC       _SPI_TRX_16_BIT
+  -------         PROC          SPI_INTERRUPT
+  C:0A4BH         LINE#         42
+  C:0A54H         LINE#         44
+  C:0A5BH         LINE#         45
+  C:0A5BH         LINE#         46
+  C:0A5BH         LINE#         47
+  C:0A5EH         LINE#         48
+  C:0A60H         LINE#         49
+  C:0A60H         LINE#         51
+  C:0A60H         LINE#         53
+  C:0A60H         LINE#         55
+  C:0A60H         LINE#         57
+  C:0A60H         LINE#         58
+  C:0A60H         LINE#         59
+  -------         ENDPROC       SPI_INTERRUPT
+  -------         PROC          ADC_INIT
+  C:0A87H         LINE#         12
+  C:0A87H         LINE#         13
+  C:0A87H         LINE#         14
+  C:0A89H         LINE#         15
+  -------         ENDPROC       ADC_INIT
+  -------         PROC          _ADC
+  D:0006H         SYMBOL        channel
+  -------         DO            
+  D:0006H         SYMBOL        temp_adc_data
+  -------         ENDDO         
+  C:09EBH         LINE#         17
+  C:09EBH         LINE#         18
+  C:09EBH         LINE#         24
+  C:09EEH         LINE#         25
+  C:09F1H         LINE#         26
+  C:09F3H         LINE#         27
+  C:09FDH         LINE#         28
+  C:09FFH         LINE#         30
+  C:0A0AH         LINE#         31
+  C:0A0AH         LINE#         32
+  -------         ENDPROC       _ADC
+  -------         PROC          DAC_INIT
+  C:0A82H         LINE#         12
+  C:0A82H         LINE#         13
+  C:0A82H         LINE#         14
+  C:0A84H         LINE#         15
+  C:0A86H         LINE#         16
+  -------         ENDPROC       DAC_INIT
+  -------         PROC          _DAC
+  D:0006H         SYMBOL        temp_dac_data
+  C:0A0BH         LINE#         18
+  C:0A0BH         LINE#         19
+  C:0A0BH         LINE#         23
+  C:0A0EH         LINE#         24
+  C:0A11H         LINE#         25
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/02/2019  15:34:51  PAGE 5
+
+
+  C:0A13H         LINE#         26
+  C:0A15H         LINE#         27
+  C:0A23H         LINE#         28
+  C:0A26H         LINE#         29
+  C:0A28H         LINE#         30
+  C:0A2AH         LINE#         32
+  -------         ENDPROC       _DAC
+  -------         PROC          _MOVING_AVG
+  D:0002H         SYMBOL        sample
+  -------         DO            
+  D:0021H         SYMBOL        cap
+  D:0023H         SYMBOL        f_data
+  D:0035H         SYMBOL        f_index
+  D:0037H         SYMBOL        f_avg
+  -------         ENDDO         
+  C:0979H         LINE#         4
+  C:097DH         LINE#         5
+  C:097DH         LINE#         11
+  C:0990H         LINE#         12
+  C:099FH         LINE#         13
+  C:09BCH         LINE#         15
+  C:09CAH         LINE#         16
+  -------         ENDPROC       _MOVING_AVG
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        adc_data
+  D:000AH         SYMBOL        dac_data
+  D:000CH         SYMBOL        value
+  B:0020H.1       SYMBOL        dir
+  -------         ENDDO         
+  C:0917H         LINE#         10
+  C:0917H         LINE#         11
+  C:0917H         LINE#         12
+  C:0920H         LINE#         14
+  C:0924H         LINE#         15
+  C:0926H         LINE#         17
+  C:0929H         LINE#         18
+  C:092CH         LINE#         19
+  C:092FH         LINE#         23
+  C:092FH         LINE#         24
+  C:092FH         LINE#         25
+  C:0936H         LINE#         26
+  C:0939H         LINE#         27
+  C:0942H         LINE#         29
+  C:094EH         LINE#         30
+  C:0955H         LINE#         31
+  C:0966H         LINE#         32
+  C:096AH         LINE#         33
+  C:0975H         LINE#         34
+  C:0977H         LINE#         35
+  -------         ENDPROC       MAIN
+  -------         PROC          _MSDELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/02/2019  15:34:51  PAGE 6
+
+
+  C:0A2BH         LINE#         38
+  C:0A2BH         LINE#         39
+  C:0A2BH         LINE#         41
+  C:0A35H         LINE#         42
+  C:0A35H         LINE#         43
+  C:0A43H         LINE#         44
+  C:0A4AH         LINE#         45
+  -------         ENDPROC       _MSDELAY
+  -------         ENDMOD        DAC_TRIANGLEWAVE
+
+  -------         MODULE        ?C?SIDIV
+  C:088CH         PUBLIC        ?C?SIDIV
+  -------         ENDMOD        ?C?SIDIV
+
+  -------         MODULE        ?C?UIDIV
+  C:08C2H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_ADC?DAC_TRIANGLEWAVE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_MOVING_AVG?DAC_TRIANGLEWAVE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0184H BYTE (18%) *
+******************************************************************************
+
+Program Size: data=40.2 xdata=0 code=656
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)

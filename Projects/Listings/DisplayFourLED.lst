@@ -1,0 +1,77 @@
+A51 MACRO ASSEMBLER  DISPLAYFOURLED                                                       08/20/2019 14:31:23 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\DisplayFourLED.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\DisplayFourLED.asm SET(SMALL) DEBUG PRINT(.\Listings\DisplayFo
+                      urLED.lst) OBJECT(.\Objects\DisplayFourLED.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0000h
+0000 02008B            2     ljmp main
+0050                   3     org 0050h
+                       4     
+0050                   5     delay:
+0050 7B14              6                     mov  R3, #0x14
+0052 7AC8              7     back1:  mov  R2, #0xC8
+0054 79FF              8     back2:  mov  R1, #0xFF
+0056 D9FE              9     back3:  djnz R1, back3
+0058 DAFA             10                     djnz R2, back2
+005A DBF6             11                     djnz R3, back1
+005C 22               12     RET
+                      13     
+005D                  14     display:
+005D AD51             15                     mov   R5,  0x51
+005F 7C00             16                     mov   R4, #0x00
+0061 ED               17     CP1:    mov   A,  R5
+0062 2C               18                     add   A,  R4
+0063 F8               19                     mov   R0, A
+0064 E6               20                     mov   A,  @R0
+0065 54F0             21                     anl   A,  #0xF0
+0067 F590             22                     mov   P1, A
+0069 0C               23                     inc   R4
+006A 120050           24                     lcall delay
+006D EC               25                     mov   A,  R4
+006E B550F0           26                     cjne  A,  0x50, CP1
+0071 22               27     ret
+                      28     
+0072                  29     init:
+0072 755006           30                     mov   0x50, #0x06
+0075 755160           31                     mov   0x51, #0x60
+0078 75605F           32                     mov   0x60, #0x5F
+007B 75614D           33                     mov   0x61, #0x4D
+007E 75623B           34                     mov   0x62, #0x3B
+0081 756329           35                     mov   0x63, #0x29
+0084 756417           36                     mov   0x64, #0x17
+0087 756505           37                     mov   0x65, #0x05
+008A 22               38     ret
+                      39     
+008B 120072           40     main:   lcall init
+008E 12005D           41                     lcall display
+0091 80FE             42     here:   sjmp  here
+                      43     end
+A51 MACRO ASSEMBLER  DISPLAYFOURLED                                                       08/20/2019 14:31:23 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK1. . . . . . .  C ADDR   0052H   A   
+BACK2. . . . . . .  C ADDR   0054H   A   
+BACK3. . . . . . .  C ADDR   0056H   A   
+CP1. . . . . . . .  C ADDR   0061H   A   
+DELAY. . . . . . .  C ADDR   0050H   A   
+DISPLAY. . . . . .  C ADDR   005DH   A   
+HERE . . . . . . .  C ADDR   0091H   A   
+INIT . . . . . . .  C ADDR   0072H   A   
+MAIN . . . . . . .  C ADDR   008BH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

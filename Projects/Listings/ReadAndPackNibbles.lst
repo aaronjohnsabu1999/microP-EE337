@@ -1,0 +1,84 @@
+A51 MACRO ASSEMBLER  READANDPACKNIBBLES                                                   09/03/2019 14:23:21 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\ReadAndPackNibbles.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\ReadAndPackNibbles.asm SET(SMALL) DEBUG PRINT(.\Listings\ReadA
+                      ndPackNibbles.lst) OBJECT(.\Objects\ReadAndPackNibbles.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org  0000h
+0000 020139            2     ljmp main
+0100                   3     org  0100h
+                       4     
+0100                   5     readNibbles:
+0100 7590FF            6                     mov P1,  #0xFF          ; set P1.7-P1.4 and configure P1.3-P1.0 as input
+0103 120124            7                     lcall delayFive         ; delay of 5 sec
+0106 53900F            8                     anl P1,  #0x0F          ; clear P1.7-P1.4
+0109 12012C            9                     lcall delayOne          ; delay of 1 sec
+010C E590             10                     mov A,    P1            ; accept input into accumulator
+010E F8               11                     mov R0,   A                     ; store input in R1
+010F C4               12                     swap A                          ; store P1.3-P1.0 in P1.7-P1.4 (and vice ve
+                             rsa)
+0110 F590             13                     mov  P1, A
+0112 120124           14                     lcall delayFive         ; delay of 5 sec
+0115 22               15     ret
+                      16     
+0116                  17     packNibbles:
+0116 E54E             18                     mov  A,    0x4E
+0118 C4               19                     swap A
+0119 54F0             20                     anl  A,   #0xF0
+011B F9               21                     mov  R1,   A
+011C E54F             22                     mov  A,    0x4F
+011E 540F             23                     anl  A,   #0x0F
+0120 29               24                     add  A,    R1
+0121 F550             25                     mov  0x50, A
+0123 22               26     ret
+                      27     
+0124                  28     delayFive:
+0124 7A05             29                     mov R2, #0x05
+0126 12012C           30     CP1:    lcall delayOne
+0129 DAFB             31                     djnz R2, CP1
+012B 22               32     ret
+                      33     
+012C                  34     delayOne:
+012C 7D14             35                     mov  R5, #0x14
+012E 7EC8             36     back1:  mov  R6, #0xC8
+0130 7FF9             37     back2:  mov  R7, #0xF9
+0132 DFFE             38     back3:  djnz R7,  back3
+0134 DEFA             39                     djnz R6,  back2
+0136 DDF6             40                     djnz R5,  back1
+0138 22               41     ret
+                      42     
+0139 120100           43     main:   lcall readNibbles
+013C 884E             44                     mov   0x4E, R0
+013E 120100           45                     lcall readNibbles
+0141 884F             46                     mov   0x4F, R0
+0143 120116           47                     lcall packNibbles
+0146 020139           48                     ljmp main
+                      49     end
+A51 MACRO ASSEMBLER  READANDPACKNIBBLES                                                   09/03/2019 14:23:21 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK1. . . . . . .  C ADDR   012EH   A   
+BACK2. . . . . . .  C ADDR   0130H   A   
+BACK3. . . . . . .  C ADDR   0132H   A   
+CP1. . . . . . . .  C ADDR   0126H   A   
+DELAYFIVE. . . . .  C ADDR   0124H   A   
+DELAYONE . . . . .  C ADDR   012CH   A   
+MAIN . . . . . . .  C ADDR   0139H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+PACKNIBBLES. . . .  C ADDR   0116H   A   
+READNIBBLES. . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

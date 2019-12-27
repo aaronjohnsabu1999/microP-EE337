@@ -1,0 +1,47 @@
+A51 MACRO ASSEMBLER  ZEROOUT                                                              08/20/2019 14:20:33 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\ZeroOut.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\ZeroOut.asm SET(SMALL) DEBUG PRINT(.\Listings\ZeroOut.lst) OBJ
+                      ECT(.\Objects\ZeroOut.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0000h
+0000 02005F            2     ljmp main
+0050                   3     org 0050h
+                       4     
+0050                   5     zeroOut:
+0050 A951              6                     mov  R1,   0x51
+0052 7B00              7                     mov  R3,  #0x00
+0054 E9                8     CP1:    mov  A,    R1
+0055 2B                9                     add  A,    R3
+0056 F8               10                     mov  R0,   A
+0057 7600             11                     mov  @R0, #0x00
+0059 0B               12                     inc  R3
+005A EB               13                     mov  A,  R3
+005B B550F6           14                     cjne A,  0x50, CP1
+005E 22               15     ret
+                      16     
+005F 120050           17     main:   lcall zeroOut
+0062 80FE             18     here:   sjmp  here
+                      19     end
+A51 MACRO ASSEMBLER  ZEROOUT                                                              08/20/2019 14:20:33 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CP1. . . . . . . .  C ADDR   0054H   A   
+HERE . . . . . . .  C ADDR   0062H   A   
+MAIN . . . . . . .  C ADDR   005FH   A   
+ZEROOUT. . . . . .  C ADDR   0050H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

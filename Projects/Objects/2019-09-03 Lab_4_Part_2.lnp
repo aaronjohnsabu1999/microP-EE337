@@ -1,0 +1,3 @@
+".\Objects\CheckSumLEDDisplay.obj" 
+TO ".\Objects\2019-09-03 Lab_4_Part_2" 
+PRINT(".\Listings\2019-09-03 Lab_4_Part_2.m51") RAMSIZE(256) 

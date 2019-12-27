@@ -1,0 +1,80 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    09/07/2019  11:36:35  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Prime.obj TO .\Objects\2019-09-07 Quiz_1_Part_3 PRINT (.\Listings\2019-09-07 Quiz_
+>> 1_Part_3.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Prime.obj (PRIME)
+
+
+LINK MAP OF MODULE:  .\Objects\2019-09-07 Quiz_1_Part_3 (PRIME)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     012FH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\2019-09-07 Quiz_1_Part_3 (PRIME)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        PRIME
+  D:00F0H         SYMBOL        B
+  C:0100H         SYMBOL        CHECK
+  C:0104H         SYMBOL        CP1
+  C:0114H         SYMBOL        CP2
+  C:0117H         SYMBOL        CPX
+  C:012DH         SYMBOL        HERE
+  C:0129H         SYMBOL        ISNOTPM
+  C:0119H         SYMBOL        MAIN
+  C:011FH         SYMBOL        NEXTNO
+  C:0000H         LINE#         2
+  C:0100H         LINE#         6
+  C:0102H         LINE#         7
+  C:0104H         LINE#         9
+  C:0105H         LINE#         10
+  C:0106H         LINE#         11
+  C:0108H         LINE#         12
+  C:010AH         LINE#         13
+  C:010CH         LINE#         14
+  C:010DH         LINE#         15
+  C:010EH         LINE#         16
+  C:0110H         LINE#         17
+  C:0113H         LINE#         18
+  C:0114H         LINE#         19
+  C:0117H         LINE#         20
+  C:0118H         LINE#         21
+  C:0119H         LINE#         24
+  C:011BH         LINE#         26
+  C:011DH         LINE#         27
+  C:011FH         LINE#         28
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/07/2019  11:36:35  PAGE 2
+
+
+  C:0120H         LINE#         29
+  C:0123H         LINE#         30
+  C:0126H         LINE#         32
+  C:0127H         LINE#         33
+  C:0128H         LINE#         34
+  C:0129H         LINE#         35
+  C:012AH         LINE#         36
+  C:012DH         LINE#         37
+  -------         ENDMOD        PRIME
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0032H BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=303
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

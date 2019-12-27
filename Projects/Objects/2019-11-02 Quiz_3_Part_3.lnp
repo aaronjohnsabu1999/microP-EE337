@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\DAC_Modulation.obj" 
+TO ".\Objects\2019-11-02 Quiz_3_Part_3" 
+PRINT(".\Listings\2019-11-02 Quiz_3_Part_3.m51") RAMSIZE(256) 

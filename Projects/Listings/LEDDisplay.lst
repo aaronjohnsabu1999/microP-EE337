@@ -1,0 +1,71 @@
+A51 MACRO ASSEMBLER  LEDDISPLAY                                                           08/27/2019 14:03:33 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\LEDDisplay.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\LEDDisplay.asm SET(SMALL) DEBUG PRINT(.\Listings\LEDDisplay.ls
+                      t) OBJECT(.\Objects\LEDDisplay.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0000h
+0000 020119            2     ljmp main
+0100                   3     org 0100h
+                       4     
+0100 E590              5     read:   mov A,  P1
+0102 540F              6                     anl A, #0x0F
+0104 F9                7                     mov R1, A
+0105 22                8     ret
+                       9     
+0106                  10     delayBy4:
+0106 89F0             11                     mov  B,   R1
+0108 ACF0             12                     mov  R4,  B
+010A 7D05             13     back0:  mov  R5, #0x05
+010C 7EC8             14     back1:  mov  R6, #0xC8
+010E 7FFF             15     back2:  mov  R7, #0xFF
+0110 DFFE             16     back3:  djnz R7,  back3
+0112 DEFA             17                     djnz R6,  back2
+0114 DDF6             18                     djnz R5,  back1
+0116 DCF2             19                     djnz R4,  back0
+0118 22               20     ret
+                      21     
+0119 7590FF           22     main:   mov  P1, #0xFF
+011C 120100           23                     lcall read
+011F 120106           24     mech:   lcall delayBy4
+0122 B295             25                     cpl  P1.5
+0124 120106           26                     lcall delayBy4
+0127 B295             27                     cpl  P1.5
+0129 B296             28                     cpl  P1.6
+012B 120106           29                     lcall delayBy4
+012E B295             30                     cpl  P1.5
+0130 120106           31                     lcall delayBy4
+0133 B295             32                     cpl  P1.5
+0135 B296             33                     cpl  P1.6
+0137 B297             34                     cpl  P1.7
+0139 120100           35                     lcall read
+013C 80E1             36                     sjmp  mech
+                      37     end
+A51 MACRO ASSEMBLER  LEDDISPLAY                                                           08/27/2019 14:03:33 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+BACK0. . . . . . .  C ADDR   010AH   A   
+BACK1. . . . . . .  C ADDR   010CH   A   
+BACK2. . . . . . .  C ADDR   010EH   A   
+BACK3. . . . . . .  C ADDR   0110H   A   
+DELAYBY4 . . . . .  C ADDR   0106H   A   
+MAIN . . . . . . .  C ADDR   0119H   A   
+MECH . . . . . . .  C ADDR   011FH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+READ . . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

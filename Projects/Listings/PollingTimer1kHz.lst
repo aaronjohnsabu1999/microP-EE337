@@ -1,0 +1,51 @@
+A51 MACRO ASSEMBLER  POLLINGTIMER1KHZ                                                     09/24/2019 13:35:01 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\PollingTimer1kHz.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\PollingTimer1kHz.asm SET(SMALL) DEBUG PRINT(.\Listings\Polling
+                      Timer1kHz.lst) OBJECT(.\Objects\PollingTimer1kHz.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org  0000h
+0000 020050            2     ljmp main
+                       3     
+0050                   4     org  0050h
+0050 758A10            5     main:   mov TL0,  #00010000b
+0053 758CFC            6                     mov TH0,  #11111100b
+0056 758901            7                     mov TMOD, #00000001b
+0059 D28C              8                     setb TR0
+005B E4                9     loop:   clr  A
+005C A28D             10                     mov  C, TF0
+005E 33               11                     rlc  A
+005F B401F9           12                     cjne A, #0x01, loop
+0062 C28D             13                     clr  TF0
+0064 B2B2             14                     cpl  P3.2
+0066 758CFC           15                     mov  TH0,  #11111100b
+0069 758A02           16                     mov  TL0,  #00000010b
+006C 80ED             17                     sjmp  loop
+                      18     
+                      19     end
+A51 MACRO ASSEMBLER  POLLINGTIMER1KHZ                                                     09/24/2019 13:35:01 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LOOP . . . . . . .  C ADDR   005BH   A   
+MAIN . . . . . . .  C ADDR   0050H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,61 @@
+A51 MACRO ASSEMBLER  PARTIALSUM                                                           08/06/2019 16:12:09 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\PartialSum.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\PartialSum.asm SET(SMALL) DEBUG PRINT(.\Listings\PartialSum.ls
+                      t) OBJECT(.\Objects\PartialSum.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org  0h
+0000 020100            2     ljmp main
+0100                   3     org  100h
+0100                   4     main:
+0100 AB50              5             mov R3,  50h
+0102 7901              6             mov R1,  #1             ;number
+0104 7A01              7             mov R2,  #1             ;present partial sum
+0106 7851              8             mov R0,  #51h   ;location for partial sum
+0108 E550              9             mov A,   50h
+010A 6018             10             jz  here
+010C EA               11             mov A,   R2
+010D F6               12             mov @R0, A
+010E E550             13             mov A,   50h
+0110 9401             14             subb A,  #1
+0112 6010             15             jz  here
+                      16             
+0114                  17     here1:
+0114 E9               18             mov A,   R1
+0115 2401             19             add A,   #1
+0117 F9               20             mov R1,  A
+0118 2A               21             add A,   R2
+0119 FA               22             mov R2,  A
+011A E8               23             mov A,   R0
+011B 2401             24             add A,   #1
+011D F8               25             mov R0,  A
+011E EA               26             mov A,   R2
+011F F6               27             mov @R0, A
+0120 E9               28             mov  A,  R1
+0121 B550F0           29             cjne A,  50h, here1
+                      30             
+0124                  31     here:
+0124 80FE             32             sjmp here
+                      33     
+                      34     end
+A51 MACRO ASSEMBLER  PARTIALSUM                                                           08/06/2019 16:12:09 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+HERE . . . . . . .  C ADDR   0124H   A   
+HERE1. . . . . . .  C ADDR   0114H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

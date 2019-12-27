@@ -1,0 +1,365 @@
+A51 MACRO ASSEMBLER  REACTIONTIMER                                                        10/13/2019 14:56:59 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\ReactionTimer.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\ReactionTimer.asm SET(SMALL) DEBUG PRINT(.\Listings\ReactionTi
+                      mer.lst) OBJECT(.\Objects\ReactionTimer.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+  0080                 1     LCD_rs          equ P0.0
+  0081                 2     LCD_rw          equ P0.1
+  0082                 3     LCD_en          equ P0.2
+  00A0                 4     LCD_data        equ P2
+                       5     
+0000                   6     org             0000h
+0000 02011D            7     ljmp    main
+                       8     
+000B                   9     org             000Bh
+000B 020050           10     ljmp    T0ISR
+                      11     
+0050                  12     org             0050h
+0050 C28D             13     T0ISR:  clr             TF0
+0052 758A1C           14                     mov             TL0,    #00011100b
+0055 758CFC           15                     mov             TH0,    #11111100b
+0058 0E               16                     inc             R6
+0059 BE0001           17                     cjne    R6,             #0x00,  ISREnd
+005C 0D               18                     inc             R5
+005D 32               19     ISREnd: reti
+                      20     
+005E 7880             21     LinesA: mov             R0,             #0x80
+0060 7650             22                     mov             @R0,    #0x50            
+0062 08               23                     inc             R0
+0063 7652             24                     mov             @R0,    #0x52            
+0065 08               25                     inc             R0
+0066 7645             26                     mov             @R0,    #0x45            
+0068 08               27                     inc             R0
+0069 7653             28                     mov             @R0,    #0x53            
+006B 08               29                     inc             R0
+006C 7653             30                     mov             @R0,    #0x53            
+006E 08               31                     inc             R0
+006F 7620             32                     mov             @R0,    #0x20            
+0071 08               33                     inc             R0
+0072 7653             34                     mov             @R0,    #0x53            
+0074 08               35                     inc             R0
+0075 762F             36                     mov             @R0,    #0x2F            
+0077 08               37                     inc             R0
+0078 7657             38                     mov             @R0,    #0x57            
+007A 08               39                     inc             R0
+007B 7620             40                     mov             @R0,    #0x20            
+007D 08               41                     inc             R0
+007E 7650             42                     mov             @R0,    #0x50            
+0080 08               43                     inc             R0
+0081 7631             44                     mov             @R0,    #0x31            
+0083 08               45                     inc             R0
+0084 762E             46                     mov             @R0,    #0x2E            
+0086 08               47                     inc             R0
+0087 7630             48                     mov             @R0,    #0x30            
+0089 08               49                     inc             R0
+008A 7600             50                     mov             @R0,    #0x00            
+008C 08               51                     inc             R0
+                      52                     
+008D 7641             53                     mov             @R0,    #0x41            
+008F 08               54                     inc             R0
+0090 7653             55                     mov             @R0,    #0x53            
+0092 08               56                     inc             R0
+0093 7620             57                     mov             @R0,    #0x20            
+A51 MACRO ASSEMBLER  REACTIONTIMER                                                        10/13/2019 14:56:59 PAGE     2
+
+0095 08               58                     inc             R0
+0096 764C             59                     mov             @R0,    #0x4C            
+0098 08               60                     inc             R0
+0099 7645             61                     mov             @R0,    #0x45            
+009B 08               62                     inc             R0
+009C 7644             63                     mov             @R0,    #0x44            
+009E 08               64                     inc             R0
+009F 7620             65                     mov             @R0,    #0x20            
+00A1 08               66                     inc             R0
+00A2 7647             67                     mov             @R0,    #0x47            
+00A4 08               68                     inc             R0
+00A5 764C             69                     mov             @R0,    #0x4C            
+00A7 08               70                     inc             R0
+00A8 764F             71                     mov             @R0,    #0x4F            
+00AA 08               72                     inc             R0
+00AB 7657             73                     mov             @R0,    #0x57            
+00AD 08               74                     inc             R0
+00AE 7653             75                     mov             @R0,    #0x53            
+00B0 08               76                     inc             R0
+00B1 7600             77                     mov             @R0,    #0x00            
+00B3 08               78                     inc             R0
+00B4 22               79     ret
+00B5 7652             80     LinesB: mov             @R0,    #0x52            
+00B7 08               81                     inc             R0
+00B8 7645             82                     mov             @R0,    #0x45            
+00BA 08               83                     inc             R0
+00BB 7641             84                     mov             @R0,    #0x41            
+00BD 08               85                     inc             R0
+00BE 7643             86                     mov             @R0,    #0x43            
+00C0 08               87                     inc             R0
+00C1 7654             88                     mov             @R0,    #0x54            
+00C3 08               89                     inc             R0
+00C4 7649             90                     mov             @R0,    #0x49            
+00C6 08               91                     inc             R0
+00C7 764F             92                     mov             @R0,    #0x4F            
+00C9 08               93                     inc             R0
+00CA 764E             94                     mov             @R0,    #0x4E            
+00CC 08               95                     inc             R0
+00CD 7620             96                     mov             @R0,    #0x20            
+00CF 08               97                     inc             R0
+00D0 7654             98                     mov             @R0,    #0x54            
+00D2 08               99                     inc             R0
+00D3 7649            100                     mov             @R0,    #0x49            
+00D5 08              101                     inc             R0
+00D6 764D            102                     mov             @R0,    #0x4D            
+00D8 08              103                     inc             R0
+00D9 7645            104                     mov             @R0,    #0x45            
+00DB 08              105                     inc             R0
+00DC 7600            106                     mov             @R0,    #0x00            
+00DE 08              107                     inc             R0
+                     108                     
+00DF 7643            109                     mov             @R0,    #0x43            
+00E1 08              110                     inc             R0
+00E2 764F            111                     mov             @R0,    #0x4F            
+00E4 08              112                     inc             R0
+00E5 7655            113                     mov             @R0,    #0x55            
+00E7 08              114                     inc             R0
+00E8 764E            115                     mov             @R0,    #0x4E            
+00EA 08              116                     inc             R0
+00EB 7654            117                     mov             @R0,    #0x54            
+00ED 08              118                     inc             R0
+00EE 7620            119                     mov             @R0,    #0x20            
+00F0 08              120                     inc             R0
+00F1 7649            121                     mov             @R0,    #0x49            
+00F3 08              122                     inc             R0
+00F4 7653            123                     mov             @R0,    #0x53            
+A51 MACRO ASSEMBLER  REACTIONTIMER                                                        10/13/2019 14:56:59 PAGE     3
+
+00F6 08              124                     inc             R0
+00F7 7620            125                     mov             @R0,    #0x20            
+00F9 08              126                     inc             R0
+00FA 7658            127                     mov             @R0,    #0x58            
+00FC 08              128                     inc             R0
+00FD 7658            129                     mov             @R0,    #0x58            
+00FF 08              130                     inc             R0
+0100 7658            131                     mov             @R0,    #0x58            
+0102 08              132                     inc             R0
+0103 7658            133                     mov             @R0,    #0x58            
+0105 08              134                     inc             R0
+0106 7600            135                     mov             @R0,    #0x00            
+0108 22              136     ret
+0109                 137     initSeq:
+0109 380C0106        138                     db      0x38, 0x0C, 0x01, 0x06
+010D                 139     bin2ascii:
+010D 30313233        140                     db      0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x41, 0
+                             x42, 0x43, 0x44, 0x45, 0x46
+0111 34353637                
+0115 38394142                
+0119 43444546                
+                     141     
+011D 75A000          142     main:   mov             P2,             #0x00                                              
+                                                           
+0120 759000          143                     mov             P1,             #0x00
+0123 115E            144                     acall   LinesA
+0125 11B5            145                     acall   LinesB
+0127 5107            146                     acall   delay
+0129 5107            147                     acall   delay
+                     148                     
+012B 31C0            149                     acall   lcd_init
+012D 5107            150                     acall   delay
+012F 5107            151                     acall   delay
+0131 5107            152                     acall   delay
+                     153                     
+0133 7480            154                     mov             A,              #0x80
+0135 31DA            155                     acall   lcd_command
+0137 5107            156                     acall   delay
+0139 7980            157                     mov             R1,             #0x80
+013B 31FA            158                     acall   lcd_sendstring
+013D 5107            159                     acall   delay
+                     160     
+013F 74C0            161                     mov             A,              #0xC0
+0141 31DA            162                     acall   lcd_command
+0143 5107            163                     acall   delay
+0145 798F            164                     mov             R1,             #0x8F
+0147 31FA            165                     acall   lcd_sendstring
+                     166                     
+0149 7D00            167                     mov             R5,             #00000000b
+014B 7E00            168                     mov             R6,             #00000000b
+014D 758A1C          169                     mov             TL0,    #00011100b
+0150 758CFC          170                     mov             TH0,    #11111100b
+0153 758901          171                     mov             TMOD,   #00000001b
+0156 75A882          172                     mov             IE,             #10000010b
+                     173                     
+0159 75901F          174                     mov             P1,             #00011111b
+015C D28C            175                     setb    TR0
+015E E590            176     repeat: mov             A,              P1
+0160 5401            177                     anl             A,              #00000001b
+0162 B401F9          178                     cjne    A,              #00000001b,     repeat
+0165 C28C            179                     clr             TR0
+0167 C294            180                     clr             P1.4
+0169 8D40            181                     mov             0x40,           R5
+016B 8E41            182                     mov             0x41,           R6
+                     183                     
+016D 90010D          184                     mov             dptr,   #bin2ascii
+A51 MACRO ASSEMBLER  REACTIONTIMER                                                        10/13/2019 14:56:59 PAGE     4
+
+0170 78B3            185                     mov             R0,             #0xB3
+0172 E540            186                     mov             A,              0x40
+0174 54F0            187                     anl             A,              #0xF0
+0176 C4              188                     swap    A
+0177 93              189                     movc    A,              @A+DPTR
+0178 F6              190                     mov             @R0,    A
+0179 08              191                     inc             R0
+017A E540            192                     mov             A,              0x40
+017C 540F            193                     anl             A,              #0x0F
+017E 93              194                     movc    A,              @A+DPTR
+017F F6              195                     mov             @R0,    A
+0180 08              196                     inc             R0
+0181 E541            197                     mov             A,              0x41
+0183 54F0            198                     anl             A,              #0xF0
+0185 C4              199                     swap    A
+0186 93              200                     movc    A,              @A+DPTR
+0187 F6              201                     mov             @R0,    A
+0188 08              202                     inc             R0
+0189 E541            203                     mov             A,              0x41
+018B 540F            204                     anl             A,              #0x0F
+018D 93              205                     movc    A,              @A+DPTR
+018E F6              206                     mov             @R0,    A
+                     207                     
+018F 75A000          208                     mov             P2,             #0x00
+0192 759000          209                     mov             P1,             #0x00
+0195 31C0            210                     acall   lcd_init
+0197 5107            211                     acall   delay
+0199 5107            212                     acall   delay
+019B 5107            213                     acall   delay
+                     214                     
+019D 7480            215                     mov             A,              #0x80
+019F 31DA            216                     acall   lcd_command
+01A1 5107            217                     acall   delay
+01A3 799C            218                     mov             R1,             #0x9C
+01A5 31FA            219                     acall   lcd_sendstring
+01A7 5107            220                     acall   delay
+                     221     
+01A9 74C0            222                     mov             A,              #0xC0
+01AB 31DA            223                     acall   lcd_command
+01AD 5107            224                     acall   delay
+01AF 79AA            225                     mov             R1,             #0xAA
+01B1 31FA            226                     acall   lcd_sendstring
+                     227                     
+01B3 7BBE            228                     mov             R3,             #190
+01B5 7A64            229     CP2:    mov             R2,             #100
+01B7 5107            230     CP3:    acall   delay
+01B9 DAFC            231                     djnz    R2,             CP3
+01BB DBF8            232                     djnz    R3,             CP2
+                     233     
+01BD 02011D          234                     ljmp    main
+                     235     
+01C0                 236     lcd_init:                                                                                  
+                                                                   
+01C0 7F00            237                     mov             R7,             #0x00
+01C2 900109          238                     mov             dptr,   #initSeq
+01C5 EF              239     CP1:    mov             A,              R7
+01C6 93              240                     movc    A,              @A+dptr
+01C7 0F              241                     inc             R7
+01C8 F5A0            242                     mov             LCD_data,       A
+01CA C280            243                     clr             LCD_rs
+01CC C281            244                     clr             LCD_rw
+01CE D282            245                     setb    LCD_en
+01D0 5107            246                     acall   delay
+01D2 C282            247                     clr             LCD_en
+01D4 5107            248                     acall   delay
+01D6 BF04EC          249                     cjne    R7,             #0x04,  CP1
+A51 MACRO ASSEMBLER  REACTIONTIMER                                                        10/13/2019 14:56:59 PAGE     5
+
+01D9 22              250     ret
+                     251     
+01DA                 252     lcd_command:
+01DA F5A0            253              mov   LCD_data, A
+01DC C280            254              clr   LCD_rs
+01DE C281            255              clr   LCD_rw
+01E0 D282            256              setb  LCD_en
+01E2 5107            257                      acall delay
+01E4 C282            258              clr   LCD_en
+01E6 5107            259                      acall delay
+01E8 22              260     ret
+                     261     
+01E9                 262     lcd_senddata:
+01E9 F5A0            263                     mov   LCD_data, A
+01EB D280            264                     setb  LCD_rs
+01ED C281            265                     clr   LCD_rw
+01EF D282            266                     setb  LCD_en
+01F1 5107            267                     acall delay
+01F3 C282            268                     clr   LCD_en
+01F5 5107            269                     acall delay
+01F7 5107            270                     acall delay
+01F9 22              271     ret
+                     272     
+01FA                 273     lcd_sendstring:
+01FA C0E0            274                     push  0x0E0
+01FC                 275     lcd_sendstring_loop:
+01FC E7              276                     mov   A, @R1
+01FD 6005            277                     jz    exit
+01FF 31E9            278                     acall lcd_senddata
+0201 09              279                     inc   R1
+0202 80F8            280                     sjmp  LCD_sendstring_loop
+0204 D0E0            281     exit:   pop   0x0E0
+0206 22              282     ret
+                     283     
+0207 C000            284     delay:  push 0
+0209 C001            285                     push 1
+020B 7801            286                     mov  R0, #0x01
+020D 79FF            287     loop2:  mov  R1, #0xFF
+020F D9FE            288     loop1:  djnz R1, loop1
+0211 D8FA            289                     djnz R0, loop2
+0213 D001            290                     pop  1
+0215 D000            291                     pop  0 
+0217 22              292     ret
+                     293     
+                     294     end
+A51 MACRO ASSEMBLER  REACTIONTIMER                                                        10/13/2019 14:56:59 PAGE     6
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E              T Y P E  V A L U E   ATTRIBUTES
+
+BIN2ASCII . . . . .  C ADDR   010DH   A   
+CP1 . . . . . . . .  C ADDR   01C5H   A   
+CP2 . . . . . . . .  C ADDR   01B5H   A   
+CP3 . . . . . . . .  C ADDR   01B7H   A   
+DELAY . . . . . . .  C ADDR   0207H   A   
+EXIT. . . . . . . .  C ADDR   0204H   A   
+IE. . . . . . . . .  D ADDR   00A8H   A   
+INITSEQ . . . . . .  C ADDR   0109H   A   
+ISREND. . . . . . .  C ADDR   005DH   A   
+LCD_COMMAND . . . .  C ADDR   01DAH   A   
+LCD_DATA. . . . . .  D ADDR   00A0H   A   
+LCD_EN. . . . . . .  B ADDR   0080H.2 A   
+LCD_INIT. . . . . .  C ADDR   01C0H   A   
+LCD_RS. . . . . . .  B ADDR   0080H.0 A   
+LCD_RW. . . . . . .  B ADDR   0080H.1 A   
+LCD_SENDDATA. . . .  C ADDR   01E9H   A   
+LCD_SENDSTRING. . .  C ADDR   01FAH   A   
+LCD_SENDSTRING_LOOP  C ADDR   01FCH   A   
+LINESA. . . . . . .  C ADDR   005EH   A   
+LINESB. . . . . . .  C ADDR   00B5H   A   
+LOOP1 . . . . . . .  C ADDR   020FH   A   
+LOOP2 . . . . . . .  C ADDR   020DH   A   
+MAIN. . . . . . . .  C ADDR   011DH   A   
+P0. . . . . . . . .  D ADDR   0080H   A   
+P1. . . . . . . . .  D ADDR   0090H   A   
+P2. . . . . . . . .  D ADDR   00A0H   A   
+REPEAT. . . . . . .  C ADDR   015EH   A   
+T0ISR . . . . . . .  C ADDR   0050H   A   
+TF0 . . . . . . . .  B ADDR   0088H.5 A   
+TH0 . . . . . . . .  D ADDR   008CH   A   
+TL0 . . . . . . . .  D ADDR   008AH   A   
+TMOD. . . . . . . .  D ADDR   0089H   A   
+TR0 . . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

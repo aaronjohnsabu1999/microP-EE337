@@ -1,0 +1,58 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    09/07/2019  10:23:44  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\DebugIt.obj TO .\Objects\2019-09-07 Quiz_1_Part_1 PRINT (.\Listings\2019-09-07 Qui
+>> z_1_Part_1.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\DebugIt.obj (DEBUGIT)
+
+
+LINK MAP OF MODULE:  .\Objects\2019-09-07 Quiz_1_Part_1 (DEBUGIT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0115H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\2019-09-07 Quiz_1_Part_1 (DEBUGIT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DEBUGIT
+  D:00F0H         SYMBOL        B
+  C:0113H         SYMBOL        HERE
+  C:010AH         SYMBOL        LOOP
+  C:0100H         SYMBOL        MAIN
+  C:0000H         LINE#         2
+  C:0100H         LINE#         6
+  C:0102H         LINE#         7
+  C:0104H         LINE#         8
+  C:0106H         LINE#         9
+  C:0108H         LINE#         10
+  C:010AH         LINE#         12
+  C:010BH         LINE#         13
+  C:010DH         LINE#         14
+  C:010EH         LINE#         15
+  C:010FH         LINE#         16
+  C:0110H         LINE#         17
+  C:0111H         LINE#         18
+  C:0113H         LINE#         19
+  -------         ENDMOD        DEBUGIT
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0018H BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=277
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,73 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    09/07/2019  11:05:46  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\WaveformGeneration.obj TO .\Objects\2019-09-07 Quiz_1_Part_2 PRINT (.\Listings\201
+>> 9-09-07 Quiz_1_Part_2.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\WaveformGeneration.obj (WAVEFORMGENERATION)
+
+
+LINK MAP OF MODULE:  .\Objects\2019-09-07 Quiz_1_Part_2 (WAVEFORMGENERATION)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     012BH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\2019-09-07 Quiz_1_Part_2 (WAVEFORMGENERATION)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        WAVEFORMGENERATION
+  C:0102H         SYMBOL        BACK0
+  C:0104H         SYMBOL        BACK1
+  C:011BH         SYMBOL        DECM
+  C:0100H         SYMBOL        DELAY
+  C:0127H         SYMBOL        INCCP
+  C:0120H         SYMBOL        INCM
+  C:0110H         SYMBOL        LOOP
+  C:0109H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  C:0000H         LINE#         2
+  C:0100H         LINE#         6
+  C:0102H         LINE#         7
+  C:0104H         LINE#         8
+  C:0106H         LINE#         9
+  C:0108H         LINE#         10
+  C:0109H         LINE#         13
+  C:010CH         LINE#         14
+  C:010EH         LINE#         15
+  C:0110H         LINE#         16
+  C:0112H         LINE#         17
+  C:0115H         LINE#         19
+  C:0116H         LINE#         20
+  C:0119H         LINE#         21
+  C:011BH         LINE#         22
+  C:011EH         LINE#         23
+  C:0120H         LINE#         25
+  C:0122H         LINE#         26
+  C:0125H         LINE#         27
+  C:0127H         LINE#         29
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/07/2019  11:05:46  PAGE 2
+
+
+  C:0128H         LINE#         30
+  -------         ENDMOD        WAVEFORMGENERATION
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 002EH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=299
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

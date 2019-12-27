@@ -1,0 +1,94 @@
+A51 MACRO ASSEMBLER  MATRIXTRANSPOSE                                                      08/20/2019 15:51:55 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\MatrixTranspose.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\MatrixTranspose.asm SET(SMALL) DEBUG PRINT(.\Listings\MatrixTr
+                      anspose.lst) OBJECT(.\Objects\MatrixTranspose.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org  0000h
+0000 0200B1            2     ljmp main
+0050                   3     org  0050h
+                       4     
+0050                   5     matrix_transpose:
+0050 7A00              6                     mov  R2, #0x00
+0052 7B00              7     CP1:    mov  R3, #0x00
+0054 EA                8                     mov  A,  R2
+0055 B54003            9                     cjne A,  0x40, CP2
+0058 020076           10                     ljmp CP3
+005B E541             11     CP2:    mov  A,  0x41
+005D 2A               12                     add  A,  R2
+005E 2A               13                     add  A,  R2
+005F 2A               14                     add  A,  R2
+0060 2A               15                     add  A,  R2
+0061 2B               16                     add  A,  R3
+0062 F8               17                     mov  R0, A
+0063 E542             18                     mov  A,  0x42
+0065 2B               19                     add  A,  R3
+0066 2B               20                     add  A,  R3
+0067 2B               21                     add  A,  R3
+0068 2B               22                     add  A,  R3
+0069 2A               23                     add  A,  R2
+006A F9               24                     mov  R1, A
+006B E6               25                     mov  A, @R0
+006C F7               26                     mov @R1, A
+006D 0B               27                     inc  R3
+006E EB               28                     mov  A,  R3
+006F B540E9           29                     cjne A,  0x40, CP2
+0072 0A               30                     inc  R2
+0073 020052           31                     ljmp CP1
+0076                  32     CP3:
+0076 22               33     ret
+                      34     
+0077                  35     init:
+0077 754004           36                     mov 0x40, #0x04
+007A 754150           37                     mov 0x41, #0x50
+007D 754260           38                     mov 0x42, #0x60
+                      39                     
+0080 75500C           40                     mov 0x50, #0x0C
+0083 755140           41                     mov 0x51, #0x40
+0086 75526B           42                     mov 0x52, #0x6B
+0089 755316           43                     mov 0x53, #0x16
+008C 7554A3           44                     mov 0x54, #0xA3
+008F 755525           45                     mov 0x55, #0x25
+0092 7556D4           46                     mov 0x56, #0xD4
+0095 7557C1           47                     mov 0x57, #0xC1
+0098 755887           48                     mov 0x58, #0x87
+009B 7559BD           49                     mov 0x59, #0xBD
+009E 755AF2           50                     mov 0x5A, #0xF2
+00A1 755B3A           51                     mov 0x5B, #0x3A
+00A4 755C6E           52                     mov 0x5C, #0x6E
+00A7 755D59           53                     mov 0x5D, #0x59
+00AA 755EE8           54                     mov 0x5E, #0xE8
+00AD 755F9F           55                     mov 0x5F, #0x9F
+00B0 22               56     ret
+                      57     
+A51 MACRO ASSEMBLER  MATRIXTRANSPOSE                                                      08/20/2019 15:51:55 PAGE     2
+
+00B1 120077           58     main:   lcall init
+00B4 120050           59                     lcall matrix_transpose
+00B7 80FE             60     here:   sjmp  here
+                      61     end
+A51 MACRO ASSEMBLER  MATRIXTRANSPOSE                                                      08/20/2019 15:51:55 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CP1. . . . . . . .  C ADDR   0052H   A   
+CP2. . . . . . . .  C ADDR   005BH   A   
+CP3. . . . . . . .  C ADDR   0076H   A   
+HERE . . . . . . .  C ADDR   00B7H   A   
+INIT . . . . . . .  C ADDR   0077H   A   
+MAIN . . . . . . .  C ADDR   00B1H   A   
+MATRIX_TRANSPOSE .  C ADDR   0050H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

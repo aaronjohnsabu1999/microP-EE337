@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\P8a_Main.obj" 
+TO ".\Objects\2019-10-15 Lab_8_Part_1" 
+PRINT(".\Listings\2019-10-15 Lab_8_Part_1.m51") RAMSIZE(256) 

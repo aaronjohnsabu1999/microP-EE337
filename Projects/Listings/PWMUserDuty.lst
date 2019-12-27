@@ -1,0 +1,68 @@
+A51 MACRO ASSEMBLER  PWMUSERDUTY                                                          09/24/2019 14:26:40 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\PWMUserDuty.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ..\Codes\PWMUserDuty.asm SET(SMALL) DEBUG PRINT(.\Listings\PWMUserDuty.
+                      lst) OBJECT(.\Objects\PWMUserDuty.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org  0000h
+0000 02006C            2     ljmp main
+                       3     
+000B                   4     org  000Bh
+000B 020050            5     ljmp T0ISR
+                       6     
+0050                   7     org  0050h
+0050 C28D              8     T0ISR:  clr  TF0
+0052 758A37            9                     mov  TL0,  #00110111b
+0055 758CFF           10                     mov  TH0,  #11111111b
+0058 09               11                     inc  R1
+0059 B90A0A           12                     cjne R1, #00001010b, CP1
+005C B2B2             13                     cpl  P3.2
+005E 7900             14                     mov  R1, #0x00
+0060 E590             15                     mov  A,   P1
+0062 5407             16                     anl  A,  #00000111b
+0064 2402             17                     add  A,  #00000010b
+0066 B50102           18     CP1:    cjne A,   0x01,   exit
+0069 B2B2             19                     cpl  P3.2
+006B 32               20     exit:   reti
+                      21     
+006C 759007           22     main:   mov  P1,   #0x07
+006F 75B000           23                     mov  P3,   #0x00
+0072 7900             24                     mov  R1,   #0x00
+0074 758901           25                     mov  TMOD, #00000001b
+0077 75A882           26                     mov  IE,   #10000010b
+007A 758A9B           27                     mov  TL0,  #10011011b
+007D 758CFF           28                     mov  TH0,  #11111111b
+0080 D28C             29                     setb TR0
+0082 80FE             30     loop:   sjmp loop
+                      31     end
+A51 MACRO ASSEMBLER  PWMUSERDUTY                                                          09/24/2019 14:26:40 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CP1. . . . . . . .  C ADDR   0066H   A   
+EXIT . . . . . . .  C ADDR   006BH   A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+LOOP . . . . . . .  C ADDR   0082H   A   
+MAIN . . . . . . .  C ADDR   006CH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+T0ISR. . . . . . .  C ADDR   0050H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
