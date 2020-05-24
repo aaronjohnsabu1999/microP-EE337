@@ -1,3 +1,0 @@
-".\Objects\DisplayFourLED.obj" 
-TO ".\Objects\2019-08-20 Lab_2_Part_2" 
-PRINT(".\Listings\2019-08-20 Lab_2_Part_2.m51") RAMSIZE(256) 

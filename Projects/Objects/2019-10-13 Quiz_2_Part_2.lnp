@@ -1,3 +1,0 @@
-".\Objects\ReactionTimer.obj" 
-TO ".\Objects\2019-10-13 Quiz_2_Part_2" 
-PRINT(".\Listings\2019-10-13 Quiz_2_Part_2.m51") RAMSIZE(256) 

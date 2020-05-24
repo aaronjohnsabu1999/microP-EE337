@@ -1,3 +1,0 @@
-".\Objects\PollingTimer1kHz.obj" 
-TO ".\Objects\2019-09-23 Lab_6_Homework_1" 
-PRINT(".\Listings\2019-09-23 Lab_6_Homework_1.m51") RAMSIZE(256) 

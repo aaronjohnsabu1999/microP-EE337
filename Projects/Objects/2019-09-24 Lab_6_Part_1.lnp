@@ -1,3 +1,0 @@
-".\Objects\PWMUserDuty.obj" 
-TO ".\Objects\2019-09-24 Lab_6_Part_1" 
-PRINT(".\Listings\2019-09-24 Lab_6_Part_1.m51") RAMSIZE(256) 

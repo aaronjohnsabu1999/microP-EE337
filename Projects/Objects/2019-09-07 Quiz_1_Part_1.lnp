@@ -1,3 +1,0 @@
-".\Objects\DebugIt.obj" 
-TO ".\Objects\2019-09-07 Quiz_1_Part_1" 
-PRINT(".\Listings\2019-09-07 Quiz_1_Part_1.m51") RAMSIZE(256) 

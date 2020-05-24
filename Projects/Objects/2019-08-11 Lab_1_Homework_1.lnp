@@ -1,3 +1,0 @@
-".\Objects\EightBitAdder.obj" 
-TO ".\Objects\2019-08-11 Lab_1_Homework_1" 
-PRINT(".\Listings\2019-08-11 Lab_1_Homework_1.m51") RAMSIZE(256) 

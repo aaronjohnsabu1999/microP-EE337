@@ -1,4 +1,0 @@
-".\Objects\STARTUP.obj",
-".\Objects\DAC_TriangleWave.obj" 
-TO ".\Objects\2019-11-02 Quiz_3_Part_1" 
-PRINT(".\Listings\2019-11-02 Quiz_3_Part_1.m51") RAMSIZE(256) 

@@ -1,3 +1,0 @@
-".\Objects\PartialSum.obj" 
-TO ".\Objects\2019-08-06 Introduction" 
-PRINT(".\Listings\2019-08-06 Introduction.m51") RAMSIZE(256) 

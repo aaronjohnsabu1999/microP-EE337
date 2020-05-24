@@ -1,3 +1,0 @@
-".\Objects\WaveformGeneration.obj" 
-TO ".\Objects\2019-09-07 Quiz_1_Part_2" 
-PRINT(".\Listings\2019-09-07 Quiz_1_Part_2.m51") RAMSIZE(256) 

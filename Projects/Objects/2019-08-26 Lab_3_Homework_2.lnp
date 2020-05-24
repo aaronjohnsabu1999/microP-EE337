@@ -1,3 +1,0 @@
-".\Objects\LEDDisplay.obj" 
-TO ".\Objects\2019-08-26 Lab_3_Homework_2" 
-PRINT(".\Listings\2019-08-26 Lab_3_Homework_2.m51") RAMSIZE(256) 

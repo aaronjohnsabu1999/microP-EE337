@@ -1,4 +1,0 @@
-".\Objects\STARTUP.obj",
-".\Objects\ADC_8051_Interfacing.obj" 
-TO ".\Objects\2019-10-01 Lab_7_Part_1" 
-PRINT(".\Listings\2019-10-01 Lab_7_Part_1.m51") RAMSIZE(256) 

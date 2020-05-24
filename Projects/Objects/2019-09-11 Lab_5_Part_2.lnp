@@ -1,3 +1,0 @@
-".\Objects\LCDRollName.obj" 
-TO ".\Objects\2019-09-11 Lab_5_Part_2" 
-PRINT(".\Listings\2019-09-11 Lab_5_Part_2.m51") RAMSIZE(256) 
